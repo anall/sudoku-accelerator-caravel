@@ -1,0 +1,45 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Tue Oct 12 02:29:25 2021
+[*]
+[dumpfile] "/home/anall/Projects/zero-to-asic/projects/caravel_user_project/verilog/dv/sudoku_accelerator/accel.vcd"
+[dumpfile_mtime] "Tue Oct 12 02:28:03 2021"
+[dumpfile_size] 1139423286
+[savefile] "/home/anall/Projects/zero-to-asic/projects/caravel_user_project/verilog/dv/sudoku_accelerator/accel.gtkw"
+[timestart] 0
+[size] 1486 845
+[pos] 292 80
+*-26.000000 865040001 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] accel_tb.
+[treeopen] accel_tb.uut.
+[treeopen] accel_tb.uut.mprj.
+[sst_width] 205
+[signals_width] 451
+[sst_expanded] 1
+[sst_vpaned_height] 244
+@28
+accel_tb.clk
+accel_tb.power1
+accel_tb.power2
+accel_tb.power3
+accel_tb.power4
+@22
+accel_tb.uut.mprj.la_data_in[127:0]
+accel_tb.uut.mprj.la_data_out[127:0]
+accel_tb.uut.mprj.la_oenb[127:0]
+accel_tb.spiflash.spi_addr[23:0]
+@28
+accel_tb.spiflash.powered_up
+accel_tb.spiflash.clk
+accel_tb.ser_rx
+accel_tb.ser_tx
+@800022
+accel_tb.mprj_io[37:0]
+@28
+(21)accel_tb.mprj_io[37:0]
+@29
+(22)accel_tb.mprj_io[37:0]
+@1001200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

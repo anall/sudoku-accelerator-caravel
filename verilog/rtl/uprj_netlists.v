@@ -24,5 +24,10 @@
     `include "gl/user_proj_example.v"
 `else
     `include "user_project_wrapper.v"
-    `include "user_proj_example.v"
+    `include "sudoku_accelerator_wrapper.v"
+    `include "sudoku_accelerator/src/sudoku_accelerator.v"
+    `include "sudoku_accelerator/src/simpleuart_fifo.v"
+    `include "sudoku_accelerator/src/sudoku_puzzle_wb.v"
+    `include "sudoku_accelerator/src/sudoku_puzzle.v"
+    `include "sudoku_accelerator/src/sudoku_cell.v"
 `endif

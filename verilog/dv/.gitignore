@@ -1,0 +1,8 @@
+/verify.log
+*.hex
+*.vcd
+*.vcd*
+*.vvp
+__pycache__
+simbuild
+results.xml
