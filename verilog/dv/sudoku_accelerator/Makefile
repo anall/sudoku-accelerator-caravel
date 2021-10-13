@@ -51,10 +51,14 @@ hex:  ${PATTERN:=.hex}
 coco_test: ${PATTERN}.hex
 	rm -rf sim_build/
 	mkdir sim_build/
-	iverilog -o sim_build/sim.vvp -s accel_tb accel_tb.v -DSIM -DFUNCTIONAL \
-	-I $(PDK_PATH) \
-	-I $(CARAVEL_BEHAVIOURAL_MODELS) -I $(CARAVEL_RTL_PATH) \
-	-I $(UPRJ_BEHAVIOURAL_MODELS)    -I $(UPRJ_RTL_PATH)
+#	iverilog -o sim_build/sim.vvp -s accel_tb accel_tb.v -DSIM -DFUNCTIONAL \
+#	-I $(PDK_PATH) \
+#	-I $(CARAVEL_BEHAVIOURAL_MODELS) -I $(CARAVEL_RTL_PATH) \
+#	-I $(UPRJ_BEHAVIOURAL_MODELS)    -I $(UPRJ_RTL_PATH)
+	
+	iverilog -o sim_build/sim.vvp -s accel_tb accel_tb.v -DFUNCTIONAL -DSIM -I $(PDK_PATH) \
+	-I $(CARAVEL_BEHAVIOURAL_MODELS) -I $(CARAVEL_RTL_PATH) -I $(CARAVEL_VERILOG_PATH) \
+	-I $(UPRJ_BEHAVIOURAL_MODELS) -I$(UPRJ_RTL_PATH)   -I $(UPRJ_VERILOG_PATH)
 	
 	MODULE=test_accel vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp
 
