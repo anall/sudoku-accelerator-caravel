@@ -1,18 +1,19 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Tue Oct 12 02:29:25 2021
+[*] Sat Oct 30 15:52:50 2021
 [*]
-[dumpfile] "/home/anall/Projects/zero-to-asic/projects/caravel_user_project/verilog/dv/sudoku_accelerator/accel.vcd"
-[dumpfile_mtime] "Tue Oct 12 02:28:03 2021"
-[dumpfile_size] 1139423286
-[savefile] "/home/anall/Projects/zero-to-asic/projects/caravel_user_project/verilog/dv/sudoku_accelerator/accel.gtkw"
+[dumpfile] "/home/anall/Projects/zero-to-asic/projects/sudoku-accelerator-caravel/verilog/dv/sudoku_accelerator/accel.vcd"
+[dumpfile_mtime] "Sat Oct 30 15:48:55 2021"
+[dumpfile_size] 2150173037
+[savefile] "/home/anall/Projects/zero-to-asic/projects/sudoku-accelerator-caravel/verilog/dv/sudoku_accelerator/accel.gtkw"
 [timestart] 0
 [size] 1486 845
-[pos] 292 80
-*-26.000000 865040001 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] 709 65
+*-29.000000 387140001 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] accel_tb.
 [treeopen] accel_tb.uut.
 [treeopen] accel_tb.uut.mprj.
+[treeopen] accel_tb.uut.mprj.mprj.
 [sst_width] 205
 [signals_width] 451
 [sst_expanded] 1
@@ -37,8 +38,27 @@ accel_tb.ser_tx
 accel_tb.mprj_io[37:0]
 @28
 (21)accel_tb.mprj_io[37:0]
-@29
 (22)accel_tb.mprj_io[37:0]
+@1001200
+-group_end
+@28
+accel_tb.uut.mprj.mprj.accel.ser_rx
+accel_tb.uut.mprj.mprj.accel.ser_tx
+accel_tb.uut.mprj.mprj.ser_rx
+accel_tb.uut.mprj.mprj.ser_tx
+@800022
+accel_tb.uut.mprj.io_in[37:0]
+@28
+(21)accel_tb.uut.mprj.io_in[37:0]
+(22)accel_tb.uut.mprj.io_in[37:0]
+@1001200
+-group_end
+@800022
+accel_tb.uut.mprj.io_out[37:0]
+@29
+(21)accel_tb.uut.mprj.io_out[37:0]
+@28
+(22)accel_tb.uut.mprj.io_out[37:0]
 @1001200
 -group_end
 [pattern_trace] 1

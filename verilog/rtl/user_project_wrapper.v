@@ -90,6 +90,7 @@ sudoku_accelerator_wrapper mprj (
 
   .wb_clk_i(wb_clk_i),
   .wb_rst_i(wb_rst_i),
+  .la_rst(la_data_in[0]),
 
   // MGMT SoC Wishbone Slave
   .wb_adr_i(wbs_adr_i),
@@ -102,15 +103,18 @@ sudoku_accelerator_wrapper mprj (
   .wb_ack_o(wbs_ack_o),
   .wb_dat_o(wbs_dat_o),
 
+  .ser_tx(io_out[15]),
+  .ser_tx_oeb(io_oeb[15]),
+  .ser_rx(io_in[16]),
   // Logic Analyzer Signals
-  .la_data_in(la_data_in),
+  /*.la_data_in(la_data_in),
   .la_data_out(la_data_out),
   .la_oenb(la_oenb),
 
   .io_in(io_in),
   .io_out(io_out),
   .io_oeb(io_oeb),
-  .user_clock2(user_clock2),
+  .user_clock2(user_clock2),*/
   .user_irq(user_irq)
 );
 

@@ -22,6 +22,7 @@ module sudoku_accelerator_wrapper (
 
   input wire wb_clk_i,
   input wire wb_rst_i,
+  input wire la_rst,
 
   input [31:0]  wb_adr_i,
   input [31:0]  wb_dat_i,
@@ -34,25 +35,27 @@ module sudoku_accelerator_wrapper (
   output [31:0] wb_dat_o,
 
   // Logic Analyzer Signals
-  input  [127:0] la_data_in,
-  output [127:0] la_data_out,
-  input  [127:0] la_oenb,
+  //input  [127:0] la_data_in,
+  //output [127:0] la_data_out,
+  //input  [127:0] la_oenb,
+
+  output ser_tx,
+  output ser_tx_oeb,
+  input ser_rx,
 
   // IOs
-  input  [`MPRJ_IO_PADS-1:0] io_in,
-  output [`MPRJ_IO_PADS-1:0] io_out,
-  output [`MPRJ_IO_PADS-1:0] io_oeb,
-
-  // Independent clock (on independent integer divider)
-  input   user_clock2,
+  //input  [`MPRJ_IO_PADS-1:0] io_in,
+  //output [`MPRJ_IO_PADS-1:0] io_out,
+  //output [`MPRJ_IO_PADS-1:0] io_oeb,
 
   // User maskable interrupt signals
   output [2:0] user_irq
 );
 
 wire uart_en;
-assign io_oeb[15] = ~uart_en;
-assign la_data_out[0] = uart_en;
+assign ser_tx_oeb = ~uart_en;
+//assign io_oeb[15] = ~uart_en;
+//assign la_data_out[0] = uart_en;
 
 wire int_sudoku;
 wire int_uart;
@@ -60,19 +63,19 @@ wire int_uart;
 assign user_irq[0] = int_sudoku;
 assign user_irq[1] = int_uart;
 
-assign la_data_out[32] = int_sudoku;
-assign la_data_out[33] = int_uart;
+//assign la_data_out[32] = int_sudoku;
+//assign la_data_out[33] = int_uart;
 
-assign la_oenb[33:32] = 0;
+//assign la_oenb[33:32] = 0;
 
 // expose some la pins to GPIO, both ways
-assign io_out[25:17] = la_data_in[104:96];
-assign io_oeb[25:17] = 0;
-assign la_data_out[113:105] = io_in[34:28];
+//assign io_out[25:17] = la_data_in[104:96];
+//assign io_oeb[25:17] = 0;
+//assign la_data_out[113:105] = io_in[34:28];
 
 sudoku_accelerator accel (
     .wb_clk_i(wb_clk_i),
-    .wb_rst_i(la_data_in[0]),
+    .wb_rst_i(la_rst),
 
     // MGMT SoC Wishbone Slave
     .wb_adr_i(wb_adr_i),
@@ -86,8 +89,8 @@ sudoku_accelerator accel (
     .wb_dat_o(wb_dat_o),
 
     .uart_enabled(uart_en),
-    .ser_tx(io_out[15]),
-    .ser_rx(io_in[16]),
+    .ser_tx(ser_tx),
+    .ser_rx(ser_rx),
 
     .interrupt_sudoku(int_sudoku),
     .interrupt_uart(int_uart)
