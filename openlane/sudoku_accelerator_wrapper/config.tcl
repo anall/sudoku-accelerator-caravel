@@ -31,25 +31,18 @@ set ::env(CLOCK_PORT) "wb_clk_i"
 set ::env(CLOCK_PERIOD) "40"
 set ::env(SYNTH_STRATEGY) "DELAY 2"
 
-set ::env(PL_RESIZER_ALLOW_SETUP_VIOS) 1
-set ::env(GLB_RESIZER_ALLOW_SETUP_VIOS) 1
-
-# this is probably better than what I have, and I keep getting absoutely tiny violations
-set ::env(QUIT_ON_HOLD_VIOLATIONS) 0
-set ::env(QUIT_ON_SETUP_VIOLATIONS) 0
+#set ::env(PL_RESIZER_ALLOW_SETUP_VIOS) 1
+#set ::env(GLB_RESIZER_ALLOW_SETUP_VIOS) 1
 
 #set ::env(FP_SIZING) absolute
 #set ::env(DIE_AREA) "0 0 900 600"
 
 set ::env(FP_PIN_ORDER_CFG) $script_dir/pin_order.cfg
 
-set ::env(FP_CORE_UTIL) 20
+set ::env(FP_CORE_UTIL) 45
 
-set ::env(PL_RESIZER_HOLD_MAX_BUFFER_PERCENT) 90
-set ::env(GLB_RESIZER_HOLD_MAX_BUFFER_PERCENT) 90
-
-#set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) .25
-#set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) .25
+set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) .3
+set ::env(GLB_RESIZER_HOLD_SLACK_MARGIN) .3
 
 # Maximum layer used for routing is metal 4.
 # This is because this macro will be inserted in a top level (user_project_wrapper) 
@@ -66,6 +59,6 @@ set ::env(CELL_PAD) 2
 set ::env(VDD_NETS) [list {vccd1}]
 set ::env(GND_NETS) [list {vssd1}]
 
-set ::env(DIODE_INSERTION_STRATEGY) 4
+set ::env(DIODE_INSERTION_STRATEGY) 3
 # If you're going to use multiple power domains, then disable cvc run.
 #set ::env(RUN_CVC) 0
